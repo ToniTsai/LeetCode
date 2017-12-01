@@ -29,5 +29,33 @@ namespace ConsoleApp1
 
             Assert.AreEqual(myResult, null);
         }
+
+        [TestMethod]
+        public void TestMethod2()
+        {
+            Solution solution = new Solution();
+
+            int[] myTest = { 0, 4, 3, 0 };
+            int[] myResult;
+
+            myResult = solution.TwoSum(myTest, 0);
+
+            Assert.AreEqual(myResult[0], 0);
+            Assert.AreEqual(myResult[1], 3);
+        }
+
+        [TestMethod]
+        public void TestMethod2()
+        {
+            Solution solution = new Solution();
+
+            int[] myTest = { 0, 4, 3, 0 };
+            int[] myResult;
+
+            myResult = solution.TwoSum(myTest, 0);
+
+            Assert.AreEqual(myResult[0], 0);
+            Assert.AreEqual(myResult[1], 3);
+        }
     }
 }

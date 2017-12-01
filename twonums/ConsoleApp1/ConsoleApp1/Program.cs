@@ -25,20 +25,22 @@ namespace ConsoleApp1
             for (int i = 0; i < nums.Length; i++)
             {
                 int foundIt = target - nums[i];
-                if(foundIt > 0)
+
+                if (myDict.ContainsKey(foundIt))
                 {
-                    if (myDict.ContainsKey(foundIt) && myDict[foundIt] != i)
+                    int value = myDict[foundIt];
+                    if (value != i)
                     {
                         retIndex = new int[2];
-                        if(i > myDict[foundIt])
+                        if (i > value)
                         {
-                            retIndex[0] = myDict[foundIt];
+                            retIndex[0] = value;
                             retIndex[1] = i;
                         }
                         else
                         {
                             retIndex[0] = i;
-                            retIndex[1] = myDict[foundIt];
+                            retIndex[1] = value;
                         }
                         return retIndex;
                     }
