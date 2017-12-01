@@ -10,10 +10,18 @@ namespace LeetCode
         }
         public int LengthOfLongestSubstring(string s)
         {
-            int[] CharHashIndex = new int[65536];
 
+            if (s == "")
+                return 0;
 
-            CharHashIndex[Convert.ToInt32(((char)s[0]))] = -1;
+            int[] CharHashIndex = new int[512];
+
+            int[] charInt = new int[s.Length];
+
+            for (int i = 0; i < charInt.Length; i++)
+                charInt[i] = Convert.ToInt32(((char)s[i]));
+
+            CharHashIndex[charInt[0]] = -1;
 
             int startIndex = 0;
             int endIndex = 1;
@@ -24,7 +32,7 @@ namespace LeetCode
 
             for (int i = 1; i < s.Length; i++)
             {
-                int charValue = Convert.ToInt32(((char)s[i]));
+                int charValue = charInt[i];
                 if (CharHashIndex[charValue] == 0)
                 {
                     CharHashIndex[charValue] = i;
@@ -48,7 +56,7 @@ namespace LeetCode
 
                     for (int j = startIndex; j < index; j++)
                     {
-                        CharHashIndex[Convert.ToInt32(((char)s[j]))] = 0;
+                        CharHashIndex[charInt[j]] = 0;
                     }
 
                     startIndex = index;
