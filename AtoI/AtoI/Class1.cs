@@ -42,9 +42,11 @@ namespace LeetCode
             }
 
             int maxIndex = 0;
+            int maxDigit = startIndex + 10;
 
             for (int i = startIndex; i < str.Length; i++)
             {
+
                 int charVal = str[i] - '0';
 
                 if (charVal < 0 || charVal > 9)
@@ -59,7 +61,7 @@ namespace LeetCode
 
                 if (total >= Int32.MaxValue / 10)
                 {
-                    maxIndex = i++;
+                    maxIndex = i + 1;
                     break;
                 }
 
@@ -70,26 +72,59 @@ namespace LeetCode
 
             if (maxIndex != 0)
             {
-                try
-                {
+                //try
+                //{
                     for (int i = maxIndex; i < str.Length; i++)
                     {
                         int charVal = str[i] - '0';
 
-                        if (charVal < 0 || charVal > 9)
-                            return total;
+                        if (negative)
+                        {
+                            if (charVal < 0 || charVal > 9)
+                                return total;
 
-                        total = total * factor + charVal;
+                            if (i >= maxDigit)
+                            {
+                                return Int32.MinValue;
+                            }
 
+                            if (total < Int32.MinValue / 10)
+                                return Int32.MinValue;
+
+                            if (charVal < 9)
+                                total = total * factor - charVal;
+                            else
+                                total = Int32.MinValue;
+                        }
+                        else
+                        {
+                            if (charVal < 0 || charVal > 9)
+                                return total;
+
+                            if (i >= maxDigit)
+                            {
+                                return Int32.MaxValue;
+                            }
+
+                            if (total > Int32.MaxValue / 10)
+                                return Int32.MaxValue;
+
+                            if (charVal < 8)
+                                total = total * factor + charVal;
+                            else
+                                total = Int32.MaxValue;
+                        }
+
+                        break;
                     }
-                }
-                catch
-                {
-                    if (negative)
-                        return Int32.MinValue;
-                    else
-                        return Int32.MaxValue;
-                }
+                //}
+                //catch
+                //{
+                //    if (negative)
+                //        return Int32.MinValue;
+                //    else
+                //        return Int32.MaxValue;
+                //}
 
             }
 
