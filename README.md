@@ -6,3 +6,4 @@ Longest Substring Without Repeating Characters  122ms beat 99.74%
 Two Sum 548 ms beat 67.43% (it was 69.5% but failed to fine tune the code)
 Longest Palindromic Substring 176ms beat 75%
 Zigzag conversion 152ms 94.4%
+AtoI 119 ms, 97.92%
