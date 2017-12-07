@@ -21,34 +21,15 @@ namespace LeetCode
             char currentS = s[indexS--];
             char currentP = p[indexP--];
 
-            while (indexS > 0 && indexP > 0)
+            while (indexS >= 0 || indexP >= 0)
             {
-                int repeatS = 0;
                 int repeatP = 0;
-
-                if(currentS == '*')
-                {
-                    repeatS = Int32.MaxValue;
-                    currentS = s[indexS--];
-                    while (currentS == '*')
-                        currentS = s[indexS--];
-                }
-                else
-                {
-                    if (currentS == '.')
-                    {
-                        repeatS = 1;
-                        currentS = s[indexS--];
-                        while (currentS == '.')
-                            currentS = s[indexS--];
-                    }
-                }
 
                 if (currentP == '*')
                 {
                     repeatP = Int32.MaxValue;
                     currentP = s[indexP--];
-                    while (currentP == '*')
+                    while (indexP >= 0 && currentP == '*')
                         currentP = s[indexP--];
                 }
                 else
@@ -56,9 +37,6 @@ namespace LeetCode
                     if (currentP == '.')
                     {
                         repeatP = 1;
-                        currentP = s[indexP--];
-                        while (currentP == '.')
-                            currentP = s[indexP--];
                     }
                 }
 
@@ -66,16 +44,65 @@ namespace LeetCode
                 {
                     if(repeatP == Int32.MaxValue)
                     {
-                        currentP = s[indexP--];
+                        if (indexP >= 0)
+                            currentP = s[indexP--];
                         continue;
+                    }
+                    else if(repeatP == 1)
+                    {
+                        if (indexP >= 0)
+                            currentP = s[indexP--];
+                        if (indexS >= 0)
+                            currentS = s[indexS--];
+                        continue;
+                    }
+                    else
+                    {
+                        return false;
                     }
                 }
                 else
                 {
-                    continue;
+                    if (repeatP == Int32.MaxValue)
+                    {
+                        while (indexP >= 0 && currentP == p[indexP])
+                        {
+                            indexP--;
+                        }
+
+                        while (indexS >= 0 && currentS == s[indexS])
+                        {
+                            indexS--;
+                        }
+
+                        if (indexP >= 0)
+                            currentP = p[indexP--];
+                        if (indexS >= 0)
+                            currentS = s[indexS--];
+                    }
+                    else
+                    {
+                        if (indexP >= 0)
+                            currentP = p[indexP--];
+                        if (indexS >= 0)
+                            currentS = s[indexS--];
+                    }
                 }
             }
 
+            if(indexP == 0)
+            {
+                if (currentP == '*' || currentP == '.')
+                    return true;
+                else
+                    return false;
+            } else if (indexP > 0)
+            {
+                return false;
+            }
+
+            if (indexS >= 0)
+                return false;
             return true;
         }
     }
