@@ -14,23 +14,22 @@ namespace LeetCode
             if (s == null || p == null)
                 return false;
 
-            int indexS = s.Length - 1;
-            int indexP = p.Length - 1;
+            int indexS = s.Length;
+            int indexP = p.Length;
 
 
-            char currentS = s[indexS--];
-            char currentP = p[indexP--];
+            char currentS = s[--indexS];
+            char currentP = p[--indexP];
 
-            while (indexS >= 0 || indexP >= 0)
+            while (indexS >= 0 && indexP >= 0)
             {
                 int repeatP = 0;
 
                 if (currentP == '*')
                 {
                     repeatP = Int32.MaxValue;
-                    currentP = s[indexP--];
-                    while (indexP >= 0 && currentP == '*')
-                        currentP = s[indexP--];
+                    while (indexP > 0 && p[indexP - 1] == '*')
+                        --indexP;
                 }
                 else
                 {
@@ -44,8 +43,8 @@ namespace LeetCode
                 {
                     if(repeatP == Int32.MaxValue)
                     {
-                        if (indexP >= 0)
-                            currentP = s[indexP--];
+                        if (indexP > 0)
+                            currentP = s[--indexP];
                         continue;
                     }
                     else if(repeatP == 1)
