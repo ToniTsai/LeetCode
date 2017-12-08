@@ -87,5 +87,85 @@ namespace UnitTestProject1
 
         }
 
+        [TestMethod]
+        public void TestMethod9()
+        {
+            Solution solution = new Solution();
+
+            bool actualResult = solution.IsMatch("aaa", "ab*ac*a");
+            Assert.AreEqual(true, actualResult);
+
+        }
+
+
+        [TestMethod]
+        public void TestMethod11()
+        {
+            Solution solution = new Solution();
+
+            bool actualResult = solution.IsMatch("aaa", "ab*a*c*a");
+            Assert.AreEqual(true, actualResult);
+
+        }
+
+        [TestMethod]
+        public void TestMethod12()
+        {
+            Solution solution = new Solution();
+
+            bool actualResult = solution.IsMatch("ab", ".*..");
+            Assert.AreEqual(true, actualResult);
+
+        }
+
+        [TestMethod]
+        public void TestMethod13()
+        {
+            Solution solution = new Solution();
+
+            bool actualResult = solution.IsMatch("", ".*");
+            Assert.AreEqual(true, actualResult);
+
+        }
+
+        [TestMethod]
+        public void TestMethod14()
+        {
+            Solution solution = new Solution();
+
+            bool actualResult = solution.IsMatch("", "a");
+            Assert.AreEqual(false, actualResult);
+
+        }
+
+        [TestMethod]
+        public void TestMethod15()
+        {
+            Solution solution = new Solution();
+
+            bool actualResult = solution.IsMatch("aaa", "aaaa");
+            Assert.AreEqual(false, actualResult);
+
+        }
+
+        [TestMethod]
+        public void TestMethod16()
+        {
+            Solution solution = new Solution();
+
+            bool actualResult = solution.IsMatch("aaa", ".*");
+            Assert.AreEqual(true, actualResult);
+
+        }
+
+        [TestMethod]
+        public void TestMethod17()
+        {
+            Solution solution = new Solution();
+
+            bool actualResult = solution.IsMatch("a", ".*..a*");
+            Assert.AreEqual(false, actualResult);
+
+        }
     }
 }
