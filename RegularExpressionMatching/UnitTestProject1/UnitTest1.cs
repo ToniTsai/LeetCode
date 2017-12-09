@@ -167,5 +167,45 @@ namespace UnitTestProject1
             Assert.AreEqual(false, actualResult);
 
         }
+
+        [TestMethod]
+        public void TestMethod18()
+        {
+            Solution solution = new Solution();
+
+            bool actualResult = solution.IsMatch("a", ".*..");
+            Assert.AreEqual(false, actualResult);
+
+        }
+
+        [TestMethod]
+        public void TestMethod19()
+        {
+            Solution solution = new Solution();
+
+            bool actualResult = solution.IsMatch("a", "a.");
+            Assert.AreEqual(false, actualResult);
+
+        }
+
+        [TestMethod]
+        public void TestMethod20()
+        {
+            Solution solution = new Solution();
+
+            bool actualResult = solution.IsMatch("a", "ab*a");
+            Assert.AreEqual(false, actualResult);
+
+        }
+
+        [TestMethod]
+        public void TestMethod21()
+        {
+            Solution solution = new Solution();
+
+            bool actualResult = solution.IsMatch("aasdfasdfasdfasdfas", "aasdf.*asdf.*asdf.*asdf.*s");
+            Assert.AreEqual(true, actualResult);
+
+        }
     }
 }

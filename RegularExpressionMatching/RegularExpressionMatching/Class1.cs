@@ -22,8 +22,9 @@ namespace LeetCode
             char currentP;
             int repeatP;
             bool specialChar = false;
+            bool lastRecover = false;
 
-            if(indexP >= 0)
+            if (indexP >= 0)
             {
                 currentP = p[indexP];
             } else
@@ -53,7 +54,6 @@ namespace LeetCode
                 {
                     if (currentP == '.')
                     {
-                        specialChar = true;
                         repeatP = 1;
                     }
                 }
@@ -70,6 +70,9 @@ namespace LeetCode
                                     indexS--;
                                 indexP--;
                                 indexS--;
+
+                                if (indexS < 0)
+                                    lastRecover = true;
                             }
                             else
                             {
@@ -79,6 +82,16 @@ namespace LeetCode
                                         indexS--;
                                     indexS--;
 
+                                    if(indexS >= 0)
+                                    {
+                                        if(indexP > 0)
+                                        {
+                                            if (p[indexP-1] == s[indexS])
+                                            {
+                                                indexP--;
+                                            }
+                                        }
+                                    }
                                 }
                                 else 
                                     indexP--;
@@ -111,10 +124,19 @@ namespace LeetCode
                 }
             }
 
+
+
             if( (indexS == -1 && indexP == -1))
                 return true;
             if (indexS == -1 && indexP <= 1 && currentP == '*')
                 return true;
+
+            if (indexP >= 0)
+            {
+                currentP = p[indexP];
+                if (currentP == '*')
+                    specialChar = true;
+            }
 
             if(indexS == -1)
             {
@@ -141,7 +163,7 @@ namespace LeetCode
                         else
                         {
                             currentP = p[--indexP];
-                            if (currentP == '.')
+                            if (currentP == '.' || currentP == '*')
                                 return false;
                         }
                     }
@@ -151,12 +173,17 @@ namespace LeetCode
                     }
                 }
 
-                for(int i = indexP; i >= 0; i--)
+                if (lastRecover)
                 {
-                    if (s.Length <= 0 || p[i] != s[0])
-                        return false;
+                    for (; indexP >= 0; indexP--)
+                    {
+                        if (s.Length <= 0 || p[indexP] != s[0])
+                            return false;
+                    }
                 }
 
+                if(indexP >= 0)
+                    return false;
                 return true;
             }
 
