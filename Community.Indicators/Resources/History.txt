@@ -1,0 +1,328 @@
+﻿2019.01
+	Fix: changed the defalt parameters for KST (the values for ROCs and SMAs were swapped)
+
+2018.11
+	New: Smart Money Index (thanks giorgos)
+	Fix: MACDEx_Histogram3 linked to its own Wiki page
+
+2018.08
+	Fix: CTI indicator could crash/hang WL intermittently (removed parallelization)
+
+2018.05
+	Fix: VWAP indicator's value on intraday bar 0 may be incorrect (takes the prior day VWAP closing value) (thanks KGo)
+
+2018.04
+	Fix: AccumSwingIndex was not cumulative (thanks Darrell__)
+	Change: (breaking) SmoothedParabolic moved from Community.Indicators.Trailing to Community.Indicators namespace
+
+2018.03
+	New: added Median Absolute Deviation indicator (requested by Carova)
+	Fix: fixed link to SuperTrend documentation (thanks superticker)
+
+2017.11
+	Change: the DyMoI crash fix would take 50 on negative values (previously 0)
+	New: Added .Value method to KendallTauRankCorrelation
+	Fix: UpDownVolume indicator returned incorrect readings (did not consider volume). Kudos to Darrell__ for the heads-up.
+	Fix: KVO (an internal series may be taking incorrect cached values)
+
+2017.10
+	Fix: DyMoI crash on certain data
+
+2017.07
+	New: Added BressertDSS (requested by FishFlip_MVP)
+
+2017.06
+	New: Added .Value method to Correlation and CorrelationXL indicators (requested by Carova)
+	
+2017.02
+	Fix: FastSMA potential namespace conflict with TASCIndicators (runtime error Unable to cast object...): AggZ, AverageDistance, BBands, Correlation, 
+		DerivativeOscillator, DevStops, DVI, DVSuperSmoothedDSO, GAMDO, MACZ, TrendStrength
+	Change: requires Wealth-Lab 6.9+
+		
+2015.11
+	New: Alpha indicator (requested by franzen)
+
+2015.07
+	New: Kase CD Oscillator (requested by wealthpro25)
+	New: Kase Peak Oscillator (requested by wealthpro25)
+	New: KST indicator (requested by wealthpro25)
+
+2015.06
+	Fix: T3: problem when creating multiple indicators of the same kind (different series appear identic)
+
+2015.05
+	New: "Up/Down and Intensity Day Summation Rank" oscillator (UDIDSRI)
+
+2015.04
+	Fix: TII, RMI: problem when creating multiple indicators of the same kind (different series appear identic)
+
+2015.03
+	Fix: Ehlers Instantaneous Trendline 2 (ITrend): cosmetic change
+	Fix: DSR, MSR, RMI, TII: lookback period change not applied immediately
+	Change: requires .NET 4.5 Framework (Wealth-Lab 6.8 recommended)
+
+2015.02
+	New: Ehlers Instantaneous Trendline 2 (ITrend) coded by user Carova (Vince Castelli)
+
+2014.07
+	New: Mass Index
+
+2014.05
+	New: included an optimized version of SMA (FastSMA) coded by akuzn (Alexey Kuznetsov). Works faster by 30%
+	Change: indicators that depend on SMA were switched to the new FastSMA for faster performance (by ~10-30%):
+		Acceleration Bands, Acceleration/Deceleration, Average Distance, Awesome Oscillator, BBPctB, BBWidth, BBandUpper2/Lower2, Coppock, 
+		CutlersRSI, HasslerTSI, Kase DevStops, KeltnerATR, EnvelopeUpper/EnvelopeLower, HTTrendLine, Rex, ShiftedMA, SpecialK_Daily, WLMA
+	Change: speed up AccumSwingIndex, ATR Bands, AggZ, CTI, DSR, GreaterThan (internal), PercentRank, Rex, Turnover, Up/Down Volume indicators by virtue of multi-core CPU support (parallelization)
+	Change: speed up TSF indicator (algorithm optimization)
+	Change: removed unnecessary duplicate (and slow) SMA2 indicator
+	Change: code cleanup
+	Change: possible to install in Wealth-Lab 6.6+
+	Fix: CorrelationXL out of memory exception, potential crash (replaced with Correlation internally)
+
+2013.11
+	New: SMI (requested by lukeallen63)
+
+2013.09
+	New: FractalUp, FractalUpBar, FractalDown, FractalDownBar (Bill Williams)
+
+2013.08
+	New: Hassler TSI (Trend Strength Index)
+
+2013.02
+	New: Ability to plot an external symbol's OHLC data as a drag and drop indicator
+	New: PivotLevels indicator. When applied to Intraday data, scales to Daily. On Daily, works as usual.
+	New: Cutler's RSI
+	New: Rex Oscillator
+	Fix: ConnorsRSI indicator incorrect values
+
+2013.01+
+	New: ConnorsRSI indicator
+	New: Derivative Oscillator (requested by sofia)
+	New: Adaptive Lookback: new overload for *parameterless* adaptive lookback
+	New: Adaptive Lookback: new overload for precise swing detection to accompany the "fastSwing" constructor (thanks Yuriy)
+	Change: Breaking syntax change in ConsecDaysDown and ConsecDaysUp: removed extraneous Bars parameter
+	Fix: ConsecDaysDown and ConsecDaysUp not honored the DataSeries input, always using Close
+
+2012.12
+	New: DVO oscillator by David Varadi (courtesy avish)
+
+2012.11
+	New: Turnover indicator (requested by swuzy)
+	Change: possible to install in Wealth-Lab 6.4+
+	Change: requires .NET 4.0 framework
+
+2012.07
+	Fix: Many indicators could crash WL when Bars.Count < period. This is a stability fix and therefore is recommended to install.
+	Affected indicators: most of MACDEx, Alligator, Ichimoku and Varadi families, Adaptive Laguerre, Coppock, Correlation, CTI, DV2Bounded, Elder SafeZone stops, 
+		ER, InsyncIndex, KendallTauRankCorrelation, LNRet, RMI, ShiftDelay, ShiftedMA, SMA, StoneTrend, TSF, UltimateOsc2,
+	Fix: removed "static Series method for Adaptive Lookback, fast version" from v2012.06 - breaks AdaptiveLookback
+	Change: removed try/catch block from CorrelationXL (no longer required)
+	New: EnvelopeUpper/EnvelopeLower supports SMMA
+
+2012.06
+	* New: Swing indicators by Jon Macmichael (streak): SwingHiLo, SwingHi, SwingLo
+	* Fix: static Series method for Adaptive Lookback, fast version
+
+2012.05
+	* Change: breaking change in VWAP calculation, formula fixed, now works on intraday data only (thanks jedediah)
+	* Change: installation possible in Wealth-Lab 6.3+
+
+2012.02
+	* New: WLMA (Wealth-Lab Moving Average)
+	* New: Adaptive Lookback - fast swing version
+	* New: Bollinger BandWidth (requested by Ruschem)
+	* New: Bollinger %b (requested by Ruschem)
+	* Fix: Broken Wiki links for Correlation/CorrelationXL online manuals (thanks thodder)
+
+2011.09+:
+	* Added: Skewness
+	* Added: Kurtosis
+	* Change: possible to install in Wealth-Lab 6.2+
+	* Fixed: Broken Wiki link for Beta online manual
+	* Fixed: System.ExecutionEngineException breaks debugging (only affects developers!)
+
+2011.04:
+	* Added: SMA2 (Simple moving average). Uses a different algorithm. Courtesy chamoun.
+
+2011.03:
+	* Added: Klinger Volume Oscillator (KVO)
+
+2011.02:
+	* Added: TrendStrength indicators (A,B,C,D)
+
+2011.01:
+	* Change: possible to install in Wealth-Lab 6.1+
+
+2010.12:
+	* Added: SuperTrend indicator (CMCSuperTrend and MTSuperTrendSeries versions)
+	* Added: MSR by David Varadi
+	* Added: DSR by David Varadi
+	* Added: ALMA (Arnaud Legoux Moving Average) created by thodder - a new no-lag moving average
+	* Added: McGinley Dynamic indicator (moving average), simplified version
+	* Changed: breaking change! Removed extraneous Bars parameter from Adaptive Laguerre 
+
+2010.11:
+	* Added: Kendall Tau Rank correlation (courtesy avishn)
+
+2010.10:
+	* Added: McClellan Oscillator
+	* Added: choice of SMMA (smoothed MA) to ShiftedMA
+	* Added: SeriesIsAboveValue / SeriesIsBelowValue
+	* Change: breaking change to DVCFE - added configurable PercentRank period
+	* Change: breaking change to NegativeCloses - replaced Bars parameter with DataSeries
+	* Change: breaking change to PositiveCloses - replaced Bars parameter with DataSeries
+	* Change: breaking change to PPO - replaced Bars parameter with DataSeries; changed FirstValidValue to 3 times the largest lookback period (to stabilize)
+	* Fixed: hardcoded DVCFE periods
+	* Fixed: important fix to Bill Williams' Alligator Jaw, Teeth and Lips. Now they use the correct moving average: Smoothed MA (SMMA) instead of Simple MA (SMA),
+		confirmed by "Trading Chaos" book. Thanks beckerben.
+
+2010.09:
+	* Change: possible to install in Wealth-Lab 6.x
+	* Change: breaking change! Removed an extraneous Bars parameter in MACDEx and all dependent indicators. Check out the updated descriptions and reflect the change in your Strategy code! 
+	* Added: MACDEx_Histogram3
+	* Added: Relative Momentum Indicator (RMI), courtesy dansmo
+	* Added: Wilder Swing Index
+	* Added: Accumulation Swing Index
+	* Added: PrcRank (PercentRank, matches MS Excel output, implements PartialValue) - courtesy avishn
+	* Added: DV2, PartialValue version - courtesy avishn	
+	* Added: DV2 bounded, PartialValue version - courtesy avishn
+	* Added: DV Composite Fractal Efficiency Indicator (CFE)
+	* Added: DVI oscillator (courtesy DartBoardTrader)
+	
+	* Added: PercentRank helper allows to drag & drop the indicator
+	* Fixed: PercentRank to match Excel (courtesy DartBoardTrader)
+	* Fixed: Kaufman ER not appearing as an Oscillator to the system (i.e. no overbought/oversold levels in GUI properties dialog)
+
+2010.07:
+	* Fixed: UltimateOsc2 producing Double.NaN
+
+2010.06:
+	* Added: Smoothed Parabolic
+	* Added: GMA (geometric moving average) - courtesy avishn
+	* Added: Kaufman's Efficiency Ratio (ER).
+	* Added: MAC-Z score by D.Varadi
+	* Added: AggZ by D.Varadi
+	* Added: Tim Tillson's T3 MA (created by Gary Fritz)
+	* Fixed: bug in Kase DevStop (found by thodder)
+	* Fixed: incorrect calculation of GAMDO (found/fixed by avishn)
+
+2010.03:
+	* Added: InSync Index (requested by Mac_Trader)
+
+2010.02+
+	* Added: Cumulative Intraday Volume (by Robert Sucher)
+	* Added: Year To Date Gain
+	* Added: SMMA (Smoothed Moving Average Series)
+	* Added: CTI - Chande Trend Index
+	* Added: Irwin Cycle
+	* Added: StoneTrend
+	* Fixed: missing FirstValidValue for Projection Bands
+	* Fixed: DV(2)
+	* Fixed: NRTR_WATR internal fix.
+
+2010.01:
+	* Added: Pivot Point Bar (by Cone/ss161)
+	* Added: Last Hour indicator (requested by zorgnak)
+	* Changed: Possible to install in Wealth-Lab version 5.6 or higher
+
+2009.12:
+	* Added: Twigg's Money Flow (requested by ayc868)
+
+2009.11:
+	* Added: Bill Williams Alligator, AwesomeOscillator, AccelerationDeceleration (requested by ayc868)
+	* Fixed: Online help links for the MACDEx family of indicators
+	* Changed: Possible to install in Wealth-Lab version 5.5 or higher
+
+2009.10:
+	* Added: DV Super Smoothed Double Stochastic Oscillator (DVSSDSO) by D.Varadi
+	* Added: Geometric and Arithmetic Mean Divergence Oscillator (GAMDO) by D.Varadi
+	* Added: PercentRank (coded by Michael Bytnar)
+	* Added: True Strength Index (TSI) by W.Blau
+	* Added: HiLoLimit by Dr.Koch (coded by thodder)
+
+2009.09:
+	* Added: DV2 bounded by D.Varadi (coded by Michael Bytnar)
+	* Added: BBandUpper2/BBandLower2 -- Bollinger Bands allowing for selection of calculation type: Sample or Population (by request of dansmo)
+	* Added: Moving Average Envelope (by request of hamblin1)
+	* Fixed: TII
+	* Change: Dropped support for older versions of WLD/WLP: 5.1
+
+2009.08:
+	* Added: DV2 by D.Varadi (coded by Robert Sucher)
+	* Added: Shifted Moving Average
+	* Added: The ShiftDelay indicator
+
+2009.07:
+	* Added: TrendScore by Tushar Chande (modified after WL4 code by gbeltrame)
+	* Added: Coppock curve
+	* Added: Widner Projection Bands and the companion indicators: PB Width and PB Oscillator Fast/Slow (after WL4 code by jmm & fundtimer)
+	* Added: Series Greater Than / Less Than Count (virtually, they are analogous to CrossOverValueBar / CrossUnderValueBar, respectively)
+	* Added: the complete set of Ehlers Hilbert Transform filters ported from WL4 (thanks to fundtimer)
+	* Fixed: Elder SafeZone Stop description.
+	* Removed: Ehlers Sine Wave indicator by DartboardTrader (deprecated, switched to fundtimer's implementation)
+
+2009.06:
+	* Added: Elder SafeZone Stop system: Long and Short (created by fdpiech)
+
+2009.05:
+	* Added: Linda Raschke's 3/10 Oscillator (requested by chuy)
+	* Added: John Ehlers' Sine Wave indicator (created by DartboardTrader)
+	* Fixed: Adaptive Lookback formula optimizations (thanks to Robert for the heads-up)
+	* Fixed: Gann Swing Oscillator formula
+
+2009.04+
+	* Added: Trend Intensity Index (TII)
+	* Added: Power and Log (requested by ss161)
+	* Added: Keltner ATR bands (requested by Algotrader)
+	* Added: ATR bands
+	* Added: The Tenkan Sen and the Kijun Sen (Ichimoku)
+	* Added: Excel Correlation (created by Michael Bytnar) and Correlation (created by Steve Salemy)
+	* Fixed: Choppiness (description string)
+	* Fixed: Dynamic Momentum Indicator aka DyMoI - extraneous paramer removed (thanks to zentek)
+	* Fixed: Completely reverted the 2009.02 change to indicator description string (Analysis Series breaking)
+
+2009.03+
+	* Added: Adaptive Laguerre filter.
+	* Added: Beta
+	* Added: LNRet + VarianceRatio /by Dr.Koch/
+	* Added: Consecutive Days Up + Consecutive Days Down /by Glitch/
+	* Added: Series is above /by Cone/ + Series is below
+	* Fixed: Rolled back the 2009.02 Description change for indicators that use a Bars object parameter. The change was not necessary and adversely affected the utility of the Analysis Series visualizer.
+
+2009.02
+
+    * Added: Martin Pring's Special K Daily and Special K Weekly indicators.
+    * Added: The Adaptive Lookback (Period Finder) indicator.
+    * Added: VK Bands and VKW Bands.
+    * Added: Trend Quality.
+    * Added: Sqrt (Square root of series) - (requested by snout_hound)
+    * Added: Time series forecast and variable-length Ultimate Oscillator - (requested by joepereira)
+    * Fixed: the greater part of indicator description strings to comply with the Bars.Cache mechanism. Best used with WL5.3 and above.
+    * Fixed: miscellaneous cosmetic fixes.
+
+2009.01
+
+    * Added: Density (of a Consolidation Pattern)
+    * Added: TD REI
+    * Added: LaguerreRSI
+    * Added: Gann Swing Oscillator
+    * Added: MACD_Signal3 (a copy of MACD_Signal with three configurable parameters)
+
+2008.12
+    * Added: CrossOverBar, CrossUnderBar, CrossOverValueBar, CrossUnderValueBar
+
+2008.11
+    * Added: Dreiss Choppiness Index
+
+1.3
+    * Added: Acceleration Bands.
+    * Fixed: Description for all indicators to include parameters.
+
+1.0.2.2
+    * Fixed: Group glyph was missing in the Indicator list.
+
+1.0.1.0
+    * Added: Kase DevStop Distance with supporting TR2DSeries.
+
+1.0.0.0
+    * Baseline available for download via the Extension Manager (Tools menu).

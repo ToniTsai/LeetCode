@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4C944439-8233-40D0-9733-E771D994ADEC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Community.Indicators</RootNamespace>
+    <AssemblyName>WealthLab.Indicators.Community</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\..\..\..\..\Program Files\MS123\Wealth-Lab Developer 6\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Custom - Debug|AnyCPU'">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="WealthLab, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files\MS123\Wealth-Lab Developer 6\WealthLab.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="WealthLab.Extensions.Attribute">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files\MS123\Wealth-Lab Developer 6\WealthLab.Extensions.Attribute.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="WealthLab.Indicators, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files\MS123\Wealth-Lab Developer 6\WealthLab.Indicators.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bands\AccelerationBands.cs" />
+    <Compile Include="Bands\ATRBands.cs" />
+    <Compile Include="Bands\BBands.cs" />
+    <Compile Include="Bands\Envelope.cs" />
+    <Compile Include="Bands\HiLoLimit.cs" />
+    <Compile Include="Bands\KeltnerATR.cs" />
+    <Compile Include="Bands\ProjectionBands.cs" />
+    <Compile Include="Bands\VK_Bands.cs" />
+    <Compile Include="BillWilliams\Alligator.cs" />
+    <Compile Include="BillWilliams\FractalUpDown.cs" />
+    <Compile Include="Consolidation\Choppiness.cs" />
+    <Compile Include="Consolidation\Density.cs" />
+    <Compile Include="Consolidation\Squeeze.cs" />
+    <Compile Include="Ehlers\InstantaneousTrendline2.cs" />
+    <Compile Include="Helper\Helper.cs" />
+    <Compile Include="MathAndStat\MAD.cs" />
+    <Compile Include="Miscellaneous\Beta.cs" />
+    <Compile Include="BillWilliams\AccelerationDeceleration.cs" />
+    <Compile Include="BillWilliams\AwesomeOscillator.cs" />
+    <Compile Include="Cycles\IrwinCycle.cs" />
+    <Compile Include="Ehlers\AdaptiveLaguerre.cs" />
+    <Compile Include="Ehlers\HTDCPhase.cs" />
+    <Compile Include="Ehlers\HTInPhase.cs" />
+    <Compile Include="Ehlers\HTInstTrendLine.cs" />
+    <Compile Include="Ehlers\HTLeadSin.cs" />
+    <Compile Include="Ehlers\HTPeriod.cs" />
+    <Compile Include="Ehlers\HTQuadrature.cs" />
+    <Compile Include="Ehlers\HTSin.cs" />
+    <Compile Include="Ehlers\HTTrendLine.cs" />
+    <Compile Include="Ehlers\LaguerreRSI.cs" />
+    <Compile Include="Helper\ExternalSymbolPlotter.cs" />
+    <Compile Include="Miscellaneous\Alpha.cs" />
+    <Compile Include="MovingAverages\FastSMA.cs" />
+    <Compile Include="MovingAverages\WLMA.cs" />
+    <Compile Include="Ichimoku\KijunSen.cs" />
+    <Compile Include="Ichimoku\SenkouSpan.cs" />
+    <Compile Include="Ichimoku\TenkanSen.cs" />
+    <Compile Include="MathAndStat\GreaterThan.cs" />
+    <Compile Include="MathAndStat\Correlation.cs" />
+    <Compile Include="MathAndStat\Kurtosis.cs" />
+    <Compile Include="MathAndStat\LNRet.cs" />
+    <Compile Include="MathAndStat\Log.cs" />
+    <Compile Include="MathAndStat\PercentRank.cs" />
+    <Compile Include="MathAndStat\Power.cs" />
+    <Compile Include="MathAndStat\Skewness.cs" />
+    <Compile Include="Miscellaneous\AverageDistance.cs" />
+    <Compile Include="Miscellaneous\Coppock.cs" />
+    <Compile Include="Miscellaneous\ER.cs" />
+    <Compile Include="Miscellaneous\HighestLowestOfTwo.cs" />
+    <Compile Include="Miscellaneous\LastHour.cs" />
+    <Compile Include="Miscellaneous\ShiftDelay.cs" />
+    <Compile Include="MathAndStat\Sqrt.cs" />
+    <Compile Include="Miscellaneous\YTDGain.cs" />
+    <Compile Include="MovingAverages\ALMA.cs" />
+    <Compile Include="MovingAverages\Butterworth.cs" />
+    <Compile Include="MovingAverages\GMA.cs" />
+    <Compile Include="MovingAverages\HullMA.cs" />
+    <Compile Include="MovingAverages\McGinleyDynamic.cs" />
+    <Compile Include="MovingAverages\ShiftedMA.cs" />
+    <Compile Include="MovingAverages\SMMA.cs" />
+    <Compile Include="MovingAverages\T3.cs" />
+    <Compile Include="MovingAverages\TSF.cs" />
+    <Compile Include="Oscillators\310.cs" />
+    <Compile Include="Oscillators\ConnorsRSI.cs" />
+    <Compile Include="Oscillators\BressertDSS.cs" />
+    <Compile Include="Oscillators\CutlersRSI.cs" />
+    <Compile Include="Oscillators\DerivativeOscillator.cs" />
+    <Compile Include="Oscillators\DyMoI.cs" />
+    <Compile Include="Oscillators\GannSwingOscillator.cs" />
+    <Compile Include="Oscillators\InSyncIndex.cs" />
+    <Compile Include="Oscillators\Kase\KaseCD.cs" />
+    <Compile Include="Oscillators\Kase\PeakOscillator.cs" />
+    <Compile Include="Oscillators\MCO.cs" />
+    <Compile Include="Oscillators\NewMax.cs" />
+    <Compile Include="Oscillators\PPO.cs" />
+    <Compile Include="Oscillators\ProjectionBandsOsc.cs" />
+    <Compile Include="Oscillators\PsychologicalIndex.cs" />
+    <Compile Include="Oscillators\Rex.cs" />
+    <Compile Include="Oscillators\RMI.cs" />
+    <Compile Include="Oscillators\SMI.cs" />
+    <Compile Include="Oscillators\SwingIndex.cs" />
+    <Compile Include="Oscillators\TSI.cs" />
+    <Compile Include="Oscillators\UDIDSRI.cs" />
+    <Compile Include="Oscillators\UltimateOsc2.cs" />
+    <Compile Include="Oscillators\Varadi\AggZ.cs" />
+    <Compile Include="Oscillators\Varadi\DSR.cs" />
+    <Compile Include="Oscillators\Varadi\DV2.cs" />
+    <Compile Include="Oscillators\Varadi\DVCFE.cs" />
+    <Compile Include="Oscillators\Varadi\DVI.cs" />
+    <Compile Include="Oscillators\Varadi\DVO.cs" />
+    <Compile Include="Oscillators\Varadi\DVSuperSmoothedDSO.cs" />
+    <Compile Include="Oscillators\Varadi\GAMDO.cs" />
+    <Compile Include="Oscillators\Varadi\MACZ.cs" />
+    <Compile Include="Oscillators\Varadi\MSR.cs" />
+    <Compile Include="Pring\KST.cs" />
+    <Compile Include="Series\ConsecDays.cs" />
+    <Compile Include="Series\CrossOverUnderBar.cs" />
+    <Compile Include="Series\PositiveNegativeCloses.cs" />
+    <Compile Include="Series\SeriesAboveBelow.cs" />
+    <Compile Include="Series\SeriesGreaterLessThan.cs" />
+    <Compile Include="Swings\SwingHiLo.cs" />
+    <Compile Include="Trailing\DevStops.cs" />
+    <Compile Include="Trailing\ElderSafeStops.cs" />
+    <Compile Include="Trailing\NRTR.cs" />
+    <Compile Include="Trailing\PivotPointBar.cs" />
+    <Compile Include="Trailing\SmoothedParabolic.cs" />
+    <Compile Include="Trend\CTI.cs" />
+    <Compile Include="Trend\HasslerTSI.cs" />
+    <Compile Include="Trend\StoneTrend.cs" />
+    <Compile Include="Trend\Supertrend.cs" />
+    <Compile Include="Trend\TII.cs" />
+    <Compile Include="Trend\TrendQuality.cs" />
+    <Compile Include="Trend\TrendScore.cs" />
+    <Compile Include="Trend\TrendStrength.cs" />
+    <Compile Include="Trend\VarianceRatio.cs" />
+    <Compile Include="Volatility\MassIndex.cs" />
+    <Compile Include="Volume\CIV.cs" />
+    <Compile Include="Volume\KVO.cs" />
+    <Compile Include="Volume\Turnover.cs" />
+    <Compile Include="MACD\MACDEx.cs" />
+    <Compile Include="Helper\MainModuleInstance.cs" />
+    <Compile Include="Pivots\PivotLevels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Swings\AdaptiveLookback.cs" />
+    <Compile Include="Resources\EM.cs" />
+    <Compile Include="Pring\SpecialK.cs" />
+    <Compile Include="Volume\TwiggsMoneyFlow.cs" />
+    <Compile Include="Volume\UpDownVolume.cs" />
+    <Compile Include="Volume\VPT.cs" />
+    <Compile Include="Volume\VWAP.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\CommunityIndicators.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\glyph.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\History.txt" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
